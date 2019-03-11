@@ -11,9 +11,9 @@ public class HelloController {
  
     @RequestMapping("/index")
     public String hello(Model m) throws Exception {
-        if (true) {
-            throw new Exception("自定义的异常信息！！！");
-        }
+//        if (true) {
+//            throw new Exception("自定义的异常信息！！！");
+//        }
     	m.addAttribute("now", DateFormat.getDateTimeInstance().format(new Date()));
     	m.addAttribute("test","test");
         return "index";
