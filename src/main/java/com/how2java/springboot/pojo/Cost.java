@@ -1,12 +1,9 @@
 package com.how2java.springboot.pojo;
 
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
-@Table(name = "costList")
+@Table(name = "cost_list")
 public class Cost {
 
     @Id
@@ -21,17 +18,17 @@ public class Cost {
     private int price;
 
     @Column(name = "date")
-    private Date date;
+    private String date;
 
     @Column(name = "remark")
     private String remark;
 
 
-    public Date getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(Date date) {
+    public void setDate(String date) {
         this.date = date;
     }
 
