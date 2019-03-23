@@ -1,9 +1,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <% pageContext.setAttribute("contextPath", request.getContextPath());%>
-
-<link rel="stylesheet" href="${contextPath}/layui-v2.4.5/layui/css/layui.css">
-<script src="${contextPath}/layui-v2.4.5/layui/layui.js" charset="utf-8"></script>
-
+<html>
+<head>
+    <link rel="stylesheet" href="${contextPath}/layui-v2.4.5/layui/css/layui.css">
+    <script src="${contextPath}/layui-v2.4.5/layui/layui.js"></script>
+</head>
+<body>
+<p>"request.getContextPath()的值是 "<%=request.getContextPath()%>
+</p>
+<br/>
 <form class="layui-form"> <!-- 提示：如果你不想用form，你可以换成div等任何一个普通元素 -->
     <div class="layui-form-item">
         <label class="layui-form-label">标题</label>
@@ -68,16 +73,9 @@
         //监听提交
         form.on('submit(formDemo)', function (data) {
             console.log(data);
-            debugger;
             $.ajax({
-
                 type: "POST",
-                url: '${contextPath}/insertInbox',
-                traditional: true,
-                data: data.field,
-                success: function () {
-                    alert("成功了！");
-                }
+                url: contextPath + '/insertCreateInbox'
             });
             return false;
         });
@@ -91,3 +89,5 @@
         });
     });
 </script>
+</body>
+</html>

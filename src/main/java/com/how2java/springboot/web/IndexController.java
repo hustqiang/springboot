@@ -61,6 +61,14 @@ public class IndexController {
         return "tomorrowToDo";
     }
 
+    @RequestMapping(value = "/insertInbox")
+    @ResponseBody
+    public void insertInbox(Model model,String title,String startTime,String allDay,String description,String endTime){
+        Inbox inbox = new Inbox();
+        inbox.setAllDay(allDay);
+        System.out.println("00000000000000000000");
+    }
+
     @RequestMapping(value = "/upload",method = RequestMethod.POST)
     public String upload(HttpServletRequest request, @RequestParam("file") MultipartFile file,Model model){
         String pathName = file.getOriginalFilename();

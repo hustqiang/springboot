@@ -101,11 +101,9 @@
                 title:'收集箱',
                 offset: 't',
                 skin: 'layui-layer-rim', //加上边框
-                area: ['520px', '400px'], //宽高
+                area: ['520px', '700px'], //宽高
                 content:'createInbox'
             });
         }
-
-
     });
 </script>
